@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple checklist to track the basic steps of deploying an application on AWS." />
+  <title>AWS Deployment Checklist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <p class="eyebrow">AWS Builder Center · Weekend Challenge</p>
+      <h1>AWS Deployment Checklist</h1>
+      <p class="lead">
+        Track the essential steps for deploying a simple web app on Amazon S3.
+        Check items as you go, add your own tasks, and keep progress saved in this browser.
+      </p>
+    </header>
+
+    <section class="progress-panel" aria-labelledby="progress-heading">
+      <div class="progress-top">
+        <h2 id="progress-heading" class="progress-title">Deployment progress</h2>
+        <p class="progress-percent" id="progress-percent" aria-live="polite">0%</p>
+      </div>
+      <div
+        class="progress-track"
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+        id="progress-bar"
+        aria-label="Checklist completion"
+      >
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-meta">
+        <span id="completed-count">0 completed</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span id="remaining-count">0 remaining</span>
+      </div>
+    </section>
+
+    <section class="checklist-panel" aria-labelledby="checklist-heading">
+      <div class="checklist-header">
+        <h2 id="checklist-heading">Preflight checklist</h2>
+        <button type="button" class="btn btn-reset" id="reset-btn">Reset checks</button>
+      </div>
+
+      <form class="add-form" id="add-form" autocomplete="off">
+        <label class="sr-only" for="new-task-title">New checklist item</label>
+        <input
+          type="text"
+          id="new-task-title"
+          name="title"
+          maxlength="120"
+          placeholder="Add a checklist item…"
+          required
+        />
+        <label class="sr-only" for="new-task-hint">Optional hint</label>
+        <input
+          type="text"
+          id="new-task-hint"
+          name="hint"
+          maxlength="180"
+          placeholder="Optional hint"
+        />
+        <button type="submit" class="btn btn-primary" id="add-btn">Add item</button>
+      </form>
+
+      <ul class="checklist" id="checklist"></ul>
+    </section>
+
+    <div class="completion" id="completion" hidden>
+      <div class="completion-card">
+        <p class="completion-badge">Cleared for launch</p>
+        <h2>All deployment tasks complete</h2>
+        <p>
+          You have walked through every step from local build to a live HTTPS site.
+          Nice work — your app is ready to share.
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Hosted on Amazon S3 + CloudFront (HTTPS) · Zero third-party runtime dependencies · Vanilla HTML, CSS &amp; JavaScript</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
