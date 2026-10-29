@@ -32,7 +32,7 @@ CloudFront terminates HTTPS using the **CloudFront default certificate** (`*.clo
 
 ### Amazon S3
 
-- Bucket: `aws-deployment-checklist-<AWS_ACCOUNT_ID>`
+- Bucket: `<BUCKET_NAME>`
 - Region: `us-east-1`
 - Static website hosting enabled with `index.html` and `error.html`
 - Public read limited to `s3:GetObject` on objects in this bucket only
@@ -43,7 +43,7 @@ CloudFront terminates HTTPS using the **CloudFront default certificate** (`*.clo
 - Domain: `d1zv57qzf6epld.cloudfront.net`
 - Viewer protocol: redirect HTTP → HTTPS
 - Certificate: CloudFront default TLS certificate
-- Origin: `aws-deployment-checklist-<AWS_ACCOUNT_ID>.s3-website-us-east-1.amazonaws.com`
+- Origin: `<BUCKET_NAME>.s3-website-us-east-1.amazonaws.com`
 
 No Lambda, API Gateway, DynamoDB, Cognito, or custom ACM domain certificate was required for this HTTPS URL.
 
@@ -74,8 +74,6 @@ No Lambda, API Gateway, DynamoDB, Cognito, or custom ACM domain certificate was 
 ## Live Website
 
 **HTTPS (recommended):** https://d1zv57qzf6epld.cloudfront.net
-
-HTTP S3 website endpoint (still available): http://aws-deployment-checklist-<AWS_ACCOUNT_ID>.s3-website-us-east-1.amazonaws.com
 
 ## Project Structure
 
